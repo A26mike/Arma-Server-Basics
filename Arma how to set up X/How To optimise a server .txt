@@ -1,0 +1,45 @@
+This is a heavily edited extract from a discussion on the Skype channel between B.I and server admins.
+
+This is basically a methodology to optimise a server
+
+Set The following bandwidth as follows
+
+For a 1 Gbps connection:
+
+Maxbandwidth: 1073741824
+
+Minbandwidth: 107374182
+
+For a 100 Mbps connection:
+
+Maxbandwidth: 104857600
+
+Minbandwidth: 10485760
+
+Then:
+
+Set Maxmsgsend at 2048, lower by 256 until it's ok
+Set MaxSizeGuaranteed=958; or lower by 64 until it's ok
+Set MaxSizeNonguaranteed=224; increase by 16 until it's ok
+for METS/METSN use either default or 2x
+MinErrorToSend=0.002;
+MinErrorToSendNear=0.02;(tho quite admins use even higher values 3-12x default
+Additional notes:
+
+If there are more instances of a ArmA3 server on the same box, to play safe you would split the Min and Max bandwidth appriopriately, although because the RV engine does not use all the bandwidth available on such connections anyway, it shouldn't really matter
+MinerrorX settings are often ignored if there are special events triggering the update on object
+The RV engine autodetects and adjusts unknown elements using it's internal optimisation system
+Settings will vary from server to server depending on but not inclusive of the following
+Type of mission, eg Coop/PvP
+Number of players and quality of their connection to the server
+Hardware capabilities of clients and server
+Quality of connection of clients and server
+It would be good to get some feedback on this methodology if anyone trys it
+
+To maintain some form of comparison, I've uploaded a modified patrol ops pack, which doesnt require any addons.
+
+Use this to get a comparison, its fairly popular so you should get a decent player base for it.
+
+Benchmark_pack.zip
+
+Edited May 5, 2014 by Terox
